@@ -1,0 +1,42 @@
+<% layout('../layout/page') %>
+<% block('title', title) %>
+<hr>
+<form action='/barang/update/<%= barang._id %>' method='post' role='form'>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Nama</label>
+    <input type='text' name='nama' value='<%= barang.nama %>' class='form-control' required>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Singkatan</label>
+    <input type='text' name='singkatan' value='<%= barang.singkatan %>' class='form-control' required>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Kategori</label>
+    <select type='text' name='id_kategori' class='form-control' required>
+     <% for(var i = 0; i < kategori.length; i++){ %>
+     <option value='<%= kategori[i]._id %>' <%= kategori[i]._id.toString()===k._id.toString() ? "selected" : "" %>><%= kategori[i].nama %></option>
+     <% } %>
+    </select>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Satuan</label>
+    <select type='text' name='id_satuan' class='form-control' required>
+     <% for(var i = 0; i < satuan.length; i++){ %>
+     <option value='<%= satuan[i]._id %>' <%= satuan[i]._id.toString()===s._id.toString() ? "selected" : "" %>><%= satuan[i].nama %></option>
+     <% } %>
+    </select>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Merk</label>
+    <select type='text' name='id_merk' class='form-control' required>
+     <% for(var i = 0; i < merk.length; i++){ %>
+     <option value='<%= merk[i]._id %>' <%= merk[i]._id.toString()===m._id.toString() ? "selected" : "" %>><%= merk[i].nama %></option>
+     <% } %>
+    </select>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Harga</label>
+    <input type='text' name='harga_jual' class='form-control' value='<%= barang.harga_jual %>' required>
+   </div>
+   <button type='submit' class='btn btn-primary'>Submit</button>
+</form>

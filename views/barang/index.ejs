@@ -1,2 +1,37 @@
 <% layout('../layout/page') -%>
-<% block('title', 'Data Barang') %>
+<% block('title', title) %>
+
+<div class='row'>
+	<div class='col-md-12'>
+		<a href='/barang/add'><button class='btn btn-primary'>Tambah</button></a>
+		<br><br>
+		<table class='table' id='tabel_barang' >
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Kode Barang</th>
+					<th>Nama Barang</th>
+					<th>Kategori</th>
+					<th>Satuan</th>
+					<th>Merk</th>
+					<th>Harga</th>
+					<th>Action</th>	
+				</tr>
+			</thead>
+			<tbody>
+			<% var no=1; for (var i = 0; i < barang.length; i++){ %>
+			<tr>
+				<th scope='row'><%= no++  %></th>	
+				<td><%= barang[i].kode %></td>
+				<td><%= barang[i].nama %></td>
+				<td><%= barang[i].id_kategori.nama %></td>
+				<td><%= barang[i].id_satuan.nama %></td>
+				<td><%= barang[i].id_merk.nama %></td>
+				<td><%= barang[i].harga_jual %></td>
+				<td><a href='/barang/edit/<%= barang[i]._id %>'><i class='far fa-edit'></i></a> <a href='barang/delete/<%= barang[i]._id %>' onclick='return confirm("Apa kamu yakin akan menghapus data ini?")'><i class='fas fa-trash'></i></a> </td>
+			</tr>
+			<% } %>
+			</tbody>
+		</table>
+	</div>
+</div>

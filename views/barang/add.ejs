@@ -1,0 +1,46 @@
+<% layout('../layout/page') %>
+<% block('title', 'Form Input Barang') %>
+<hr>
+<form action='/barang/insert' method='post' role='form'>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Kode</label>
+    <input type='text' name='kode' class='form-control' placeholder='Enter Kode Barang' required>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Nama</label>
+    <input type='text' name='nama' class='form-control' placeholder='Enter Nama Barang' required>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Singkatan</label>
+    <input type='text' name='singkatan' class='form-control' placeholder='Enter Singkatan Barang' required>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Kategori</label>
+    <select type='text' name='id_kategori' class='form-control' required>
+     <% for(var i = 0; i < kategori.length; i++){ %>
+     <option value='<%= kategori[i]._id %>' ><%= kategori[i].nama %></option>
+     <% } %>
+    </select>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Satuan</label>
+    <select type='text' name='id_satuan' class='form-control' required>
+     <% for(var i = 0; i < satuan.length; i++){ %>
+     <option value='<%= satuan[i]._id %>' ><%= satuan[i].nama %></option>
+     <% } %>
+    </select>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Merk</label>
+    <select type='text' name='id_merk' class='form-control' required>
+     <% for(var i = 0; i < merk.length; i++){ %>
+     <option value='<%= merk[i]._id %>' ><%= merk[i].nama %></option>
+     <% } %>
+    </select>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Harga</label>
+    <input type='text' name='harga_jual' class='form-control' placeholder='Enter Harga Barang' required>
+   </div>
+   <button type='submit' class='btn btn-primary'>Submit</button>
+</form>

@@ -2,73 +2,74 @@
 <% block('title', title) %>
 <hr>
 <div class=row>
- 
- <div class='col-md-4'>
-  <h4 align='center'>Kategori</h4><a href='/umum/kategori/add'><button class='btn btn-primary'>Tambah</button></a>
+	
+	<div class='col-md-4'>
+		<h4 align='center'>Kategori</h4><a href='/umum/kategori/add'><button class='btn btn-primary'>Tambah</button></a>
 <br>
-  <table class='table'>
-  <thead>
-   <tr>
-    <th>#</th>
-    <th>Nama Kategori</th>
-    <th>Action</th>
-   </tr>
-  </thead>
-  <tbody>
-  <% var no = 1; for(var i = 0; i < kategori.length; i++){ %>
-   <tr>
-    <th scope='row'><%= no++ %></th>
-    <td><%= kategori[i].nama %></td>
-    <td><a href='/umum/kategori/edit/<%= kategori[i]._id %>'><i class='far fa-edit'></i></a> <a href='umum/kategori/delete/<%= kategori[i]._id %>' onclick='return confirm("Apa kamu yakin akan menghapus data ini?")'><i class='fas fa-trash'></i></a> </td>
-   </tr>
-  <% } %> 
-  </tbody>
-  </table>
- </div>
- <div class='col-md-4'>
-  <h4 align='center'>Satuan</h4><a href='/umum/satuan/add'><button class='btn btn-primary'>Tambah</button></a>
 <br>
-  <table class='table'>
-  <thead>
-   <tr>
-    <th>#</th>
-    <th>Nama Satuan</th>
-    <th>Action</th>
-   </tr>
-  </thead>
-  <tbody>
-  <% var no = 1; for(var i = 0; i < satuan.length; i++){ %>
-   <tr>
-    <th scope='row'><%= no++ %></th>
-    <td><%= satuan[i].nama %></td>
-    <td><a href='/umum/satuan/edit/<%= satuan[i]._id %>'><i class='far fa-edit'></i></a> <a href='umum/satuan/delete/<%= satuan[i]._id %>' onclick='return confirm("Apa kamu yakin akan menghapus data ini?")'><i class='fas fa-trash'></i></a> </td>
-   </tr>
-  <% } %> 
-  </tbody>
-  </table>
- </div>
- <div class='col-md-4'>
-    <h4 align='center'>Merk</h4><a href='/umum/merk/add'><button class='btn btn-primary'>Tambah</button></a>
-    <br>
-    <br>
-      <table class='table'>
-      <thead>
-       <tr>
-        <th>#</th>
-        <th>Nama Merk</th>
-        <th>Action</th>
-       </tr>
-      </thead>
-      <tbody>
-      <% var no = 1; for(var i = 0; i < merk.length; i++){ %>
-       <tr>
-        <th scope='row'><%= no++ %></th>
-        <td><%= merk[i].nama %></td>
-        <td><a href='/umum/merk/edit/<%= merk[i]._id %>'><i class='far fa-edit'></i></a> <a href='umum/merk/delete/<%= merk[i]._id %>' onclick='return confirm("Apa kamu yakin akan menghapus data ini?")'><i class='fas fa-trash'></i></a> </td>
-       </tr>
-      <% } %> 
-      </tbody>
-      </table>
-     
- </div>
+		<table class='table' id='tabel_kategori'>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Nama Kategori</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% var no = 1; for(var i = 0; i < kategori.length; i++){ %>
+			<tr>
+				<th scope='row'><%= no++ %></th>
+				<td><%= kategori[i].nama %></td>
+				<td><a href='/umum/kategori/edit/<%= kategori[i]._id %>'><i class='far fa-edit'></i></a> <a href='umum/kategori/delete/<%= kategori[i]._id %>' onclick='return confirm("Apa kamu yakin akan menghapus data ini?")'><i class='fas fa-trash'></i></a> </td>
+			</tr>
+		<% } %> 
+		</tbody>
+		</table>
+	</div>
+	<div class='col-md-4'>
+		<h4 align='center'>Satuan</h4><a href='/umum/satuan/add'><button class='btn btn-primary'>Tambah</button></a>
+<br>
+<br>
+		<table class='table' id='tabel_satuan' >
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Nama Satuan</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% var no = 1; for(var i = 0; i < satuan.length; i++){ %>
+			<tr>
+				<th scope='row'><%= no++ %></th>
+				<td><%= satuan[i].nama %></td>
+				<td><a href='/umum/satuan/edit/<%= satuan[i]._id %>'><i class='far fa-edit'></i></a> <a href='umum/satuan/delete/<%= satuan[i]._id %>' onclick='return confirm("Apa kamu yakin akan menghapus data ini?")'><i class='fas fa-trash'></i></a> </td>
+			</tr>
+		<% } %> 
+		</tbody>
+		</table>
+	</div>
+	<div class='col-md-4'>
+		<h4 align='center'>Merk</h4><a href='/umum/merk/add'><button class='btn btn-primary'>Tambah</button></a>
+<br>
+<br>
+		<table class='table' id='tabel_merk'>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Nama Merk</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% var no = 1; for(var i = 0; i < merk.length; i++){ %>
+			<tr>
+				<th scope='row'><%= no++ %></th>
+				<td><%= merk[i].nama %></td>
+				<td><a href='/umum/merk/edit/<%= merk[i]._id %>'><i class='far fa-edit'></i></a> <a href='umum/merk/delete/<%= merk[i]._id %>' onclick='return confirm("Apa kamu yakin akan menghapus data ini?")'><i class='fas fa-trash'></i></a> </td>
+			</tr>
+		<% } %> 
+		</tbody>
+		</table>
+	</div>
 </div>
