@@ -1,0 +1,11 @@
+<% layout('../layout/page') %>
+<% block('title', 'Form Input Satuan') %>
+<hr>
+<form action='/umum/satuan/insert' method='post' role='form'>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Nama</label>
+    <input type='text' name='nama' class='form-control' placeholder='Enter Nama Satuan' required>
+   </div>
+   
+   <button type='submit' class='btn btn-primary'>Submit</button>
+</form>

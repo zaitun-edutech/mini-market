@@ -1,0 +1,10 @@
+<% layout('../layout/page') %>
+<% block('title', title) %>
+<hr>
+<form action='/umum/kategori/update/<%= kategori._id %>' method='post' role='form'>
+ <div class='form-group'>
+  <label for='exampleInputEmail'>Nama</label>
+  <input type='text' name='nama' class='form-control' placeholder='Enter Nama Kategori' value='<%= kategori.nama %>'  required>
+ </div>
+ <button type='submit' class='btn btn-primary'>Submit</button>
+</form>
