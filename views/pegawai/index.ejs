@@ -1,0 +1,35 @@
+<% layout('../layout/page') -%>
+<% block('title', title) %>
+
+<div class='row'>
+	<div class='col-md-12'>
+		<a href='/pegawai/add'><button class='btn btn-primary'>Tambah</button></a>
+		<br><br>
+		<table class='table' id='tabel_pegawai' >
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>NIP</th>
+					<th>Nama</th>
+					<th>Email</th>
+					<th>Jabatan</th>
+					<th>Gaji</th>
+					<th>Action</th>	
+				</tr>
+			</thead>
+			<tbody>
+			<% var no=1; for (var i = 0; i < pegawai.length; i++){ %>
+			<tr>
+				<th scope='row'><%= no++  %></th>	
+				<td><%= pegawai[i].nip %></td>
+				<td><%= pegawai[i].nama %></td>
+				<td><%= pegawai[i].email %></td>
+				<td><%= pegawai[i].jabatan %></td>
+				<td><%= pegawai[i].gaji %></td>
+				<td><a href='/pegawai/edit/<%= pegawai[i]._id %>'><i class='far fa-edit'></i></a> <a href='pegawai/delete/<%= pegawai[i]._id %>' onclick='return confirm("Apa kamu yakin akan menghapus data ini?")'><i class='fas fa-trash'></i></a> </td>
+			</tr>
+			<% } %>
+			</tbody>
+		</table>
+	</div>
+</div>

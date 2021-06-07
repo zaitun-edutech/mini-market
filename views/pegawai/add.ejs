@@ -1,0 +1,46 @@
+<% layout('../layout/page') %>
+<% block('title', 'Form Input Pegawai') %>
+<hr>
+<form action='/pegawai/insert' method='post' role='form'>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>NIP</label>
+    <input type='text' name='nip' class='form-control' placeholder='Enter NIP' required>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Nama</label>
+    <input type='text' name='nama' class='form-control' placeholder='Enter Nama' required>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Email</label>
+    <input type='text' name='email' class='form-control' placeholder='Enter Email' required>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Tempat Lahir</label>
+    <input type='text' name='tempat_lahir' class='form-control' placeholder='Enter Tempat Lahir' required>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Tanggal Lahir</label>
+    <input type='date' name='tanggal_lahir' class='form-control'  required>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Alamat</label>
+    <textarea name='alamat' class='form-control'></textarea>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Jabatan</label>
+    <select name='jabatan' class='form-control'  required>
+	<option value=''></option>
+    	<option value='Admin'>Admin</option>
+        <option value='Marketing'>Marketing</option>
+    </select>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Gaji</label>
+    <input type='number' name='gaji' class='form-control' placeholder='Enter Gaji' required>
+   </div>
+   <div class='form-group'>
+    <label for='exampleInputEmail'>Password</label>
+    <input type='password' name='password' class='form-control' placeholder='Enter Password' required>
+   </div>
+   <button type='submit' class='btn btn-primary'>Submit</button>
+</form>

@@ -10,6 +10,7 @@ var barangRouter = require('./routes/barang');
 var kategoriRouter = require('./routes/kategori');
 var satuanRouter = require('./routes/satuan');
 var merkRouter = require('./routes/merk');
+var pegawaiRouter = require('./routes/pegawai');
 
 var app = express();
 
@@ -30,6 +31,8 @@ app.use('/barang', barangRouter);
 app.use('/umum/kategori', kategoriRouter);
 app.use('/umum/satuan', satuanRouter);
 app.use('/umum/merk', merkRouter);
+app.use('/pegawai', pegawaiRouter);
+
 
 //koneksi
 
